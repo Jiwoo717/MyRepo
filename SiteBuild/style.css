@@ -4,6 +4,54 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-size: cover;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* or whatever height you desire */
+    background-color: black; /* if you want a black background behind the box */
+    overflow: hidden; /* to ensure the box and its children don't exceed this container */
+}
+
+.box {
+    position: relative;
+    width: 200px; /* adjusted from 200px */
+    height: 300px; /* adjusted from 300px, maintaining the same aspect ratio */
+    transform-style: preserve-3d;
+    animation: animate 50s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }    
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+}
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* ====== HEADER STYLES ====== */
@@ -20,7 +68,7 @@ header {
 /* ====== NAVIGATION STYLES ====== */
 
 nav {
-    position: absolute; /
+    position: absolute;
     top: 50%;  
     left: 50%;  
     transform: translate(-50%, -50%); 
