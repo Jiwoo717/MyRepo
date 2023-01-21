@@ -19,7 +19,7 @@ while current_time - start_time < run_time:
     pyautogui.moveTo(x_pos, y_pos)
     time.sleep(wait_time)
     pyautogui.moveTo(x1_pos, y1_pos)
-    pyautogui.click()
+    pyautogui.doubleClick()
     time.sleep(wait_time)
     pyautogui.moveTo(y_pos, x1_pos)
     time.sleep(wait_time)
